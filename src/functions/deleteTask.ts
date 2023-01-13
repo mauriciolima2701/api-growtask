@@ -13,6 +13,7 @@ const deleteTask = (req: Request, res: Response) => {
 		return res.status(404).json({
 			ok: false,
 			message: "Tarefa não encontrada!",
+			data: {},
 		} as IDefaultResponse);
 	}
 
@@ -21,6 +22,7 @@ const deleteTask = (req: Request, res: Response) => {
 	return res.status(200).json({
 		ok: true,
 		message: "Tarefa excluída com sucesso!",
+		data: user?.task,
 	} as IDefaultResponse);
 };
 
